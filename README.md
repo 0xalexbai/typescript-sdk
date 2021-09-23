@@ -59,7 +59,7 @@ try {
   // Perform a swap for 1USDC to the quoted minimum amount of ETH
   // If the user does not have the Associated Token Address(ATA) to receive the output token, the ATA 
   // instructions will be appended in the transaction.
-  const txId = await pool.swap(owner, usdcToken, tradeValue, quote.getMinOutputAmount()).execute();
+  const txId = await (await pool.swap(owner, usdcToken, tradeValue, quote.getMinOutputAmount())).execute();
 } catch (err) {
   // Handle errors
 }
